@@ -318,6 +318,8 @@ export default function App() {
   const [activeTag, setActiveTag] = useState("All");
   const [selected, setSelected] = useState(null);
   const [paletteOpen, setPaletteOpen] = useState(false);
+  const [photoSrc, setPhotoSrc] = useState(null);
+
 
   useEffect(() => {
     const root = document.documentElement;
@@ -390,18 +392,18 @@ export default function App() {
       <header className="sticky top-0 z-30 border-b border-zinc-200/60 bg-zinc-50/70 backdrop-blur dark:border-rose-500/20 dark:bg-[#141418]/70">
         <div className="mx-auto flex w-[min(1100px,92vw)] items-center justify-between py-3">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 overflow-hidden rounded-2xl border border-rose-400 shadow-[0_4px_16px_rgba(244,114,182,0.35)]">
+            <button
+              onClick={() => setPhotoSrc(profileNavbar)}
+              className="h-10 w-10 overflow-hidden rounded-2xl border border-rose-400 shadow-[0_4px_16px_rgba(244,114,182,0.35)] focus:outline-none"
+              aria-label="Open profile photo"
+            >
               <img
                 src={profileNavbar}
                 alt="Silmi Rahmawati"
-                className="
-                  h-full w-full
-                  object-cover
-                  scale-150
-                "
+                className="h-full w-full object-cover scale-150 cursor-zoom-in"
                 style={{ objectPosition: "center 50%" }}
               />
-            </div>
+            </button>
             <div className="leading-tight">
               <p className="text-sm font-semibold">{profile.name}</p>
               <p className="text-xs text-zinc-600 dark:text-zinc-400">
@@ -524,15 +526,17 @@ export default function App() {
          <div className="rounded-3xl border border-rose-200/70 bg-rose-50/60 p-7 shadow-sm backdrop-blur dark:border-rose-500/20 dark:bg-[#1c1c21]/70">
           {/* FOTO */}
           <div className="mb-6 flex items-center gap-4">
-            <div className="h-24 w-24 overflow-hidden rounded-3xl border-2 border-rose-300 shadow-[0_10px_35px_rgba(244,114,182,0.35)]">
+            <button
+              onClick={() => setPhotoSrc(profilePhoto)}
+              className="h-24 w-24 overflow-hidden rounded-3xl border-2 border-rose-300 shadow-[0_10px_35px_rgba(244,114,182,0.35)] focus:outline-none"
+            >
               <img
                 src={profilePhoto}
                 alt="Silmi Rahmawati"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover cursor-zoom-in"
                 style={{ objectPosition: "center 75%" }}
               />
-            </div>
-
+            </button>
             <div>
               <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
                 {profile.name}
@@ -704,7 +708,7 @@ export default function App() {
 
         {/* Footer */}
         <footer className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-zinc-200/60 py-8 text-xs text-zinc-500 dark:border-zinc-800/70 dark:text-zinc-400 md:flex-row">
-          <p>© {new Date().getFullYear()} {profile.name}. Built with React + Tailwind.</p>
+          <p>© {new Date().getFullYear()} {profile.name}.</p>
           <div className="flex items-center gap-3">
             <button
               onClick={() => setPaletteOpen(true)}
@@ -799,6 +803,38 @@ export default function App() {
           </div>
         ) : null}
       </Modal>
+      <AnimatePresence>
+        {photoSrc && (
+          <>
+            <motion.div
+              className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setPhotoSrc(null)}
+            />
+
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center p-6"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+            >
+              <img
+                src={photoSrc}
+                className="max-h-[90vh] max-w-[90vw] rounded-3xl shadow-2xl"
+              />
+
+              <button
+                onClick={() => setPhotoSrc(null)}
+                className="absolute top-6 right-6 rounded-full bg-black/60 p-2 text-white"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
