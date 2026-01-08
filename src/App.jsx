@@ -22,7 +22,7 @@ import {
 
 const profile = {
   name: "Silmi Rahmawati",
-  role: "QA Engineer • System Implementor",
+  role: "QA Engineer • Web Developer • AI Enthusiast",
   location: "Bandung, Indonesia",
   tagline:
     "I build reliable products through sharp testing, clear documentation, and pragmatic automation",
@@ -508,7 +508,7 @@ export default function App() {
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               {[
-                { k: "Focus", v: "QA • UAT • Docs" },
+                { k: "Focus", v: "QA • Web Development • AI Exploration" },
                 { k: "Strength", v: "Clarity + Structure" },
                 { k: "Style", v: "Calm, fast, reliable" },
               ].map((x) => (
@@ -542,7 +542,7 @@ export default function App() {
                 {profile.name}
               </p>
               <p className="text-xs text-rose-600">
-                QA Engineer • System Implementor
+                QA Engineer • Web Developer • AI Enthusiast
               </p>
             </div>
           </div>
