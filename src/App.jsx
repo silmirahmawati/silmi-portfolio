@@ -113,11 +113,26 @@ const experience = [
 ];
 
 const skills = [
-  { name: "Manual Testing (UAT/Regression)", level: 90 },
-  { name: "Bug Reporting & Triage", level: 88 },
-  { name: "API Testing (Postman)", level: 75 },
-  { name: "SQL Verification", level: 72 },
-  { name: "Programming for QA (Basics)", level: 55 },
+  {
+    name: "Manual Testing (UAT / Regression)",
+    desc: "Designing test scenarios, executing UAT, and validating releases in production-like environments",
+  },
+  {
+    name: "Bug Reporting & Triage",
+    desc: "Writing reproducible bug reports with clear steps, impact analysis, and clear evidence",
+  },
+  {
+    name: "API Testing (Postman)",
+    desc: "Validating REST APIs, request/response structures, and handling edge cases",
+  },
+  {
+    name: "SQL Verification",
+    desc: "Checking data integrity and validating business logic directly at database level",
+  },
+  {
+    name: "Programming for QA",
+    desc: "Using basic scripting to support testing, debugging, and simple workflow automation",
+  },
 ];
 
 
@@ -554,31 +569,21 @@ export default function App() {
             subtitle="Practical skills I use to ship stable releases"
           />
 
-            <div className="space-y-4">
-              {skills.map((s) => (
-                <div key={s.name}>
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm text-zinc-800 dark:text-zinc-200">{s.name}</p>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400">{s.level}%</p>
-                  </div>
-                  <div className="mt-2 h-2 rounded-full bg-zinc-200 dark:bg-[#2a2a30]">
-                    <div
-                      className="h-2 rounded-full bg-rose-400 dark:bg-gradient-to-r dark:from-rose-400 dark:to-pink-400 transition-all duration-700"
-                      style={{ width: `${s.level}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 rounded-2xl border border-zinc-200 bg-white/70 p-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/20 dark:text-zinc-300">
-              <p className="font-medium text-zinc-900 dark:text-zinc-50">
-                Pro tip
-              </p>
-              <p className="mt-1">
-                Press <span className="font-semibold">Ctrl/⌘ K</span> to open command palette like modern apps
-              </p>
-            </div>
+          <div className="space-y-4">
+            {skills.map((s) => (
+              <div
+                key={s.name}
+                className="rounded-2xl border border-zinc-200 bg-white/70 p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/20"
+              >
+                <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  {s.name}
+                </p>
+                <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                  {s.desc}
+                </p>
+              </div>
+            ))}
+          </div>
           </div>
         </motion.section>
 
