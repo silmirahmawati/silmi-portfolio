@@ -6,7 +6,6 @@ import {
   ArrowRight,
   Briefcase,
   Code2,
-  Download,
   ExternalLink,
   Github,
   Linkedin,
@@ -22,7 +21,7 @@ import {
 
 const profile = {
   name: "Silmi Rahmawati",
-  role: "QA Engineer • Web Developer • AI Enthusiast",
+  role: "QA Engineer • Frontend Developer • AI Enthusiast",
   location: "Bandung, Indonesia",
   tagline:
     "I build reliable products through sharp testing, clear documentation, and pragmatic automation",
@@ -32,11 +31,77 @@ const profile = {
     linkedin: "https://www.linkedin.com/in/silmi-rahmawati-505269187/",
     github: "https://github.com/silmirahmawati",
     email: "mailto:rahmawatisilmi4@gmail.com",
-    cv: "/CV-Silmi-Rahmawati.pdf", // taruh file CV di folder /public kalau pakai Vite -> taruh di /public
   },
 };
-
 const projects = [
+  {
+  id: "buku-tamu-frontend",
+  title: "Digital Guest Book",
+  year: "2022",
+  tags: ["Frontend", "UI"],
+  highlight: "Responsive guest book interface with form handling",
+  desc:
+    "A frontend web project for a digital guest book, focusing on responsive layout, form handling, and basic client-side validation.",
+  bullets: [
+    "Built responsive UI using JavaScript and HTML/CSS",
+    "Implemented form input handling and validation",
+    "Separated frontend logic from backend services",
+  ],
+  stack: ["JavaScript", "HTML", "CSS"],
+  demo: "",
+  repo: "https://github.com/silmirahmawati/buku-tamu-frontend",
+  },
+  {
+  id: "responsive-ecommerce",
+  title: "Responsive Web E-Commerce",
+  year: "2023",
+  tags: ["Frontend", "UI"],
+  highlight: "Responsive e-commerce layout with product listing",
+  desc:
+    "A responsive e-commerce website focusing on layout, product presentation, and usability across different screen sizes.",
+  bullets: [
+    "Designed responsive layout for desktop and mobile",
+    "Implemented product listing UI",
+    "Focused on usability and clean visual structure",
+  ],
+  stack: ["HTML", "CSS"],
+  demo: "",
+  repo: "https://github.com/silmirahmawati/responsive-web-ecommerce",
+  },
+  {
+  id: "book-marketplace",
+  title: "Book Marketplace Website",
+  year: "2023",
+  tags: ["Frontend", "UI"],
+  highlight: "Static book marketplace website with structured layout",
+  desc:
+    "A static book marketplace website showcasing product listing, content structure, and responsive web layout.",
+  bullets: [
+    "Built structured content layout for book listings",
+    "Applied responsive design principles",
+    "Focused on clean UI and readability",
+  ],
+  stack: ["HTML", "CSS"],
+  demo: "",
+  repo: "https://github.com/silmirahmawati/silmirahmawati-simii-book-store",  
+  },
+  {
+  id: "ml-portal",
+  title: "Web Portal with Recommendation System",
+  year: "2024",
+  tags: ["ML", "NLP", "Flask"],
+  highlight: "Personalized content delivery using ML-based recommendation",
+  desc:
+    "Developed a web portal integrating a machine learning recommendation system to personalize content based on user behavior and keyword associations.",
+  bullets: [
+    "Designed recommendation logic using Apriori & NLP",
+    "Integrated ML pipeline into web portal",
+    "Improved relevance through keyword-based association rules",
+  ],
+  stack: ["Python", "Flask", "NLP", "Apriori"],
+  demo: "",
+  repo: "https://github.com/silmirahmawati/tugasAkhir-RekomendasiBerita",
+  },
   {
     id: "qa-simrs",
     title: "SIMRS QA & Support Toolkit",
@@ -55,23 +120,6 @@ const projects = [
     repo: "",
   },
   {
-  id: "ml-portal",
-  title: "Web Portal with Recommendation System",
-  year: "2024",
-  tags: ["ML", "NLP", "Flask"],
-  highlight: "Personalized content delivery using ML-based recommendation",
-  desc:
-    "Developed a web portal integrating a machine learning recommendation system to personalize content based on user behavior and keyword associations.",
-  bullets: [
-    "Designed recommendation logic using Apriori & NLP",
-    "Integrated ML pipeline into web portal",
-    "Improved relevance through keyword-based association rules",
-  ],
-  stack: ["Python", "Flask", "NLP", "Apriori"],
-  demo: "",
-  repo: "",
-  },
-  {
     id: "portfolio",
     title: "Advanced Portfolio Website",
     year: "2026",
@@ -86,8 +134,42 @@ const projects = [
     ],
     stack: ["React", "Tailwind", "Framer Motion"],
     demo: "",
-    repo: "",
+    repo: "https://github.com/silmirahmawati/silmi-portfolio",
   },
+  {
+  id: "katalon-automation",
+  title: "Web Automation Testing with Katalon",
+  year: "2026",
+  tags: ["QA", "Automation", "UI"],
+  highlight: "Automated critical user flows to reduce repetitive manual testing",
+  desc:
+    "A web automation project using Katalon Studio to automate regression scenarios on web applications, focusing on critical user flows and UI stability.",
+  bullets: [
+    "Created automated test cases for core user journeys",
+    "Implemented reusable test objects and test suites",
+    "Improved regression efficiency and reduced manual testing effort",
+  ],
+  stack: ["Katalon Studio", "Groovy", "Web UI Automation"],
+  demo: "",
+  repo: "https://github.com/silmirahmawati/katalon-web-automation",
+},
+{
+  id: "playwright-automation",
+  title: "QA Automation with Playwright",
+  year: "2026",
+  tags: ["QA", "Automation", "Performance"],
+  highlight: "End-to-end UI automation with modern testing framework",
+  desc:
+    "An end-to-end web automation project using Playwright, focusing on reliable UI testing, test stability, and faster feedback in QA workflows.",
+  bullets: [
+    "Built end-to-end UI test scenarios using Playwright",
+    "Handled selectors, waits, and assertions for stable automation",
+    "Integrated automation tests into structured QA workflows",
+  ],
+  stack: ["Playwright", "JavaScript", "UI Automation"],
+  demo: "",
+  repo: "https://github.com/silmirahmawati/qa-automation-playwright",
+},
 ];
 
 const experience = [
@@ -130,8 +212,12 @@ const skills = [
     desc: "Checking data integrity and validating business logic directly at database level",
   },
   {
-    name: "Programming for QA",
-    desc: "Using basic scripting to support testing, debugging, and simple workflow automation",
+    name: "Automation & Performance Testing (Basic)",
+    desc: "Basic exposure to test automation and performance testing using Playwright, Katalon Studio, Mocha (basic), and Apache JMeter",
+  },
+  {
+    name: "Tools & QA Workflow",
+    desc: "Using Jira for issue tracking, Git for version control, Excel and Notion for test documentation, and collaborating within Agile SDLC (Scrum) teams",
   },
 ];
 
@@ -446,15 +532,6 @@ export default function App() {
               {dark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
 
-            <a
-              href={profile.links.cv}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-2xl border border-zinc-200 bg-white px-3 py-2 text-xs font-medium text-zinc-800 shadow-sm hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-100"
-            >
-              <Download className="h-4 w-4" />
-              CV
-            </a>
           </div>
         </div>
       </header>
@@ -489,39 +566,7 @@ export default function App() {
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
               {profile.summary}
             </p>
-
-            <div className="mt-6 flex flex-wrap items-center gap-2">
-              <a
-                href={profile.links.email}
-                className="inline-flex items-center gap-2 rounded-2xl bg-rose-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-rose-700"
-              >
-                <Mail className="h-4 w-4" />
-                Contact
-                <ArrowRight className="h-4 w-4" />
-              </a>
-
-              <a
-                href={profile.links.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-800 shadow-sm hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-100"
-              >
-                <Linkedin className="h-4 w-4" />
-                LinkedIn
-              </a>
-
-              <a
-                href={profile.links.github}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-2xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-800 shadow-sm hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-100"
-              >
-                <Github className="h-4 w-4" />
-                GitHub
-              </a>
-            </div>
-
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <div className="mt-2 grid gap-3 sm:grid-cols-3">
               {[
                 { k: "Focus", v: "QA • Web Development • AI Exploration" },
                 { k: "Strength", v: "Clarity + Structure" },
@@ -532,10 +577,76 @@ export default function App() {
                   className="rounded-2xl border border-zinc-200 bg-white/70 p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900/20"
                 >
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">{x.k}</p>
-                  <p className="mt-1 text-sm font-semibold">{x.v}</p>
+                  <p className="mt-2 text-sm font-semibold">{x.v}</p>
                 </div>
               ))}
             </div>
+
+            <section className="mt-6">
+              <div className="rounded-3xl border border-rose-200/60 bg-gradient-to-br from-rose-50 to-white px-8 py-16 shadow-sm dark:border-rose-500/20 dark:from-[#1c1c21] dark:to-[#141418]">
+
+                {/* BIG STATEMENT TITLE */}
+                <motion.h2
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                  className="leading-[0.95] pb-4 text-[clamp(2rem,5vw,4rem)] font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500"
+                >
+                  Let’s build something
+                  <br />
+                  reliable together
+                </motion.h2>
+
+                {/* LETTERING LINE */}
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="mt-4 h-1 w-32 origin-left rounded-full bg-gradient-to-r from-rose-500 to-pink-400"
+                />
+
+                {/* DESCRIPTION */}
+                <p className="mt-6 max-w-3xl text-base leading-relaxed text-zinc-700 dark:text-zinc-300">
+                  I’m open to <span className="font-semibold text-zinc-900 dark:text-zinc-50">
+                  QA Engineer
+                  </span> roles, with a focus on delivering reliable releases through structured
+                  testing, clear documentation, and close collaboration with product and
+                  engineering teams.
+                </p>
+                <div className="mt-6 flex flex-wrap items-center gap-2">
+                  <a
+                    href={profile.links.email}
+                    className="inline-flex items-center gap-2 rounded-2xl bg-rose-600 px-4 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-rose-700"
+                  >
+                    <Mail className="h-4 w-4" />
+                    Contact
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+
+                  <a
+                    href={profile.links.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-2xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-800 shadow-sm hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-100"
+                  >
+                    <Linkedin className="h-4 w-4" />
+                    LinkedIn
+                  </a>
+
+                  <a
+                    href={profile.links.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-2xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-800 shadow-sm hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-100"
+                  >
+                    <Github className="h-4 w-4" />
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </section>
           </div>
 
          <div className="rounded-3xl border border-rose-200/70 bg-rose-50/60 p-7 shadow-sm backdrop-blur dark:border-rose-500/20 dark:bg-[#1c1c21]/70">
@@ -557,7 +668,7 @@ export default function App() {
                 {profile.name}
               </p>
               <p className="text-xs text-rose-600">
-                QA Engineer • Web Developer • AI Enthusiast
+                QA Engineer • Frontend Developer • AI Enthusiast
               </p>
             </div>
           </div>
