@@ -175,12 +175,12 @@ const projects = [
 const experience = [
   {
     time: "2025–Now",
-    title: "IT Help Desk / System Implementor (SIMRS)",
+    title: "System Implementor / Quality Assurance Engineer (SIMRS)",
     org: "PT Terakorp Indonesia",
     points: [
-      "Handled tickets & UAT for multiple hospital modules",
-      "Created structured documentation for issues and fixes",
-      "Collaborated with sysadmin/dev for troubleshooting and deployment checks",
+      "Performed functional testing and User Acceptance Testing (UAT) across multiple hospital information system (SIMRS) modules",
+      "Analyzed reported issues, reproduced defects, and documented findings in structured test reports and ticketing systems",
+      "Collaborated closely with developers and system administrators to validate fixes, support troubleshooting, and ensure deployment readiness",
     ],
   },
   {
