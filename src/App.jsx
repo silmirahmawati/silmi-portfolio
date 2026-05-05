@@ -175,7 +175,7 @@ const projects = [
 const experience = [
   {
     time: "Feb 2026–Now",
-    title: "Freelance QA Engineer / Frontend Developer",
+    title: "Self-Employed / Independent Projects",
     org: "Freelance",
     points: [
       "Worked on portfolio and web development projects with a focus on responsive UI, usability, and clean implementation",
