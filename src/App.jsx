@@ -22,7 +22,7 @@ import {
 const profile = {
   name: "Silmi Rahmawati",
   role: "QA Engineer • Frontend Developer • AI Enthusiast",
-  location: "Bandung, Indonesia",
+  location: "Garut, Indonesia",
   tagline:
     "I build reliable products through sharp testing, clear documentation, and pragmatic automation",
   summary:
@@ -174,7 +174,17 @@ const projects = [
 
 const experience = [
   {
-    time: "2025–Now",
+    time: "Feb 2026–Now",
+    title: "Freelance QA Engineer / Frontend Developer",
+    org: "Freelance",
+    points: [
+      "Worked on portfolio and web development projects with a focus on responsive UI, usability, and clean implementation",
+      "Created QA documentation, test scenarios, and bug report formats for manual and automation testing practice",
+      "Explored automation testing workflows using Playwright and Katalon Studio to improve testing efficiency",
+    ],
+  },
+  {
+    time: "2025–Jan 2026",
     title: "System Implementor / Quality Assurance Engineer (SIMRS)",
     org: "PT Terakorp Indonesia",
     points: [
