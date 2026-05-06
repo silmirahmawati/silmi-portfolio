@@ -185,7 +185,7 @@ const experience = [
   },
   {
     time: "2025–Jan 2026",
-    title: "System Implementor / Quality Assurance Engineer (SIMRS)",
+    title: "System Implementor / QA (SIMRS)",
     org: "PT Terakorp Indonesia",
     points: [
       "Performed functional testing and User Acceptance Testing (UAT) across multiple hospital information system (SIMRS) modules",
